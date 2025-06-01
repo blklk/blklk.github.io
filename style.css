@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   font-family: 'Inter', Arial, sans-serif;
   background: #f7fafd;               /* lighter background */
-  color: #23272f;
+  color: #14121a;
   min-height: 100%;
 }
 
@@ -45,11 +45,11 @@ html, body {
 .logo {
   font-weight: bold;
   font-size: 1.45rem;
-  color: #23272f;
+  color: #14121a;
   letter-spacing: 1.5px;
 }
 .logo .dot {
-  color: #7d5c7d; /* #7d5c7dc;                  /* lighter green accent */
+  color: #7d5c7d;                   /* accent */
 }
 .nav-links {
   list-style: none;
@@ -59,7 +59,7 @@ html, body {
   padding: 0;
 }
 .nav-links li a {
-  color: #23272f;
+  color: #14121a;
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -83,7 +83,7 @@ html, body {
   justify-content: center;
   max-width: 560px;
   margin: 8vh 0 0 10vw;
-  color: #23272f;
+  color: #14121a;
   z-index: 2;
   min-height: 70vh;
 }
@@ -92,20 +92,20 @@ html, body {
   font-weight: 700;
   margin-bottom: 1.1rem;
   line-height: 1.07;
-  color: #23272f;
+  color: #14121a;
   letter-spacing: 1px;
   text-shadow: 0 2px 12px #fff2;
 }
 .hero-content p {
   font-size: 1.1rem;
   margin-bottom: 2.5rem;
-  color: #23272f;
+  color: #14121a;
   opacity: 0.85;
   max-width: 80%;
 }
 .hero-links .btn {
   background: #7d5c7dc;
-  color: #23272f;
+  color: #14121a;
   font-weight: 600;
   padding: 0.7em 2.2em;
   border: none;
@@ -117,7 +117,7 @@ html, body {
   box-shadow: 0 6px 24px #7d5c7dc22;
 }
 .hero-links .btn:hover {
-  background: #23272f;
+  background: #14121a;
   color: #7d5c7dc;
 }
 
@@ -132,7 +132,7 @@ html, body {
   display: block;
   width: 28px;
   height: 44px;
-  border: 2px solid #23272f;
+  border: 2px solid #14121a;
   border-radius: 16px;
   position: relative;
   opacity: 0.7;
@@ -143,7 +143,7 @@ html, body {
   width: 6px;
   height: 6px;
   border-radius: 100%;
-  background: #23272f;
+  background: #14121a;
   position: absolute;
   left: 50%;
   top: 10px;
@@ -164,7 +164,7 @@ main {
 h1 {
   font-size: 2.3rem;
   margin-top: 0;
-  color: #23272f;
+  color: #14121a;
   font-weight: 700;
 }
 .cad-viewer {
@@ -181,7 +181,7 @@ a {
   font-weight: 500;
 }
 a:hover {
-  color: #23272f;
+  color: #14121a;
   text-decoration: none;
 }
 

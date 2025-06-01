@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>blklk | CAD Models</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/stlviewer@2.7.0/dist/stlviewer.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">blklk<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="code.html">Code</a></li>
+      <li><a href="cad.html" class="active">CAD</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>CAD Models</h1>
+    <div id="cad-viewers"></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/stlviewer@2.7.0/dist/stlviewer.min.js"></script>
+  <script>
+    // List of your STL files (update these paths as needed)
+    const stlFiles = [
+      "DAC-bodies/standard/part1.stl",
+      "DAC-bodies/standard/part2.stl",
+      "DAC-holders/holder1.stl",
+      "DAC-standard-parts/part3.stl"
+    ];
+    const repoURL = "https://raw.githubusercontent.com/blklk/CAD-models/main/";
+
+    const container = document.getElementById("cad-viewers");
+    stlFiles.forEach((path, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.style.marginBottom = "2em";
+
+      const div = document.createElement("div");
+      div.className = "cad-viewer";
+      div.id = "stl_cont_" + i;
+      div.style.width = "400px";
+      div.style.height = "300px";
+      div.style.background = "#f2f2f2";
+      div.style.borderRadius = "8px";
+      div.style.boxShadow = "0 2px 12px #0002";
+      wrapper.appendChild(div);
+
+      const a = document.createElement("a");
+      a.href = repoURL + path;
+      a.download = path.split("/").pop();
+      a.innerText = "Download " + path.split("/").pop();
+      a.style.display = "block";
+      a.style.marginTop = "0.4em";
+      wrapper.appendChild(a);
+
+      container.appendChild(wrapper);
+
+      new StlViewer(div, {
+        models: [{ filename: repoURL + path }]
+      });
+    });
+  </script>
+</body>
+</html>

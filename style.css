@@ -31,7 +31,7 @@ html, body {
   letter-spacing: 1.5px;
 }
 .logo .dot {
-  color: #00ffe7;
+  color: #445c4b;
 }
 
 .nav-links {
@@ -54,9 +54,9 @@ html, body {
 }
 .nav-links li a.active,
 .nav-links li a:hover {
-  color: #00ffe7;
+  color: #445c4b;
   opacity: 1;
-  border-bottom: 2px solid #00ffe7;
+  border-bottom: 2px solid #445c4b;
 }
 
 .hero-content {
@@ -87,7 +87,7 @@ html, body {
   max-width: 80%;
 }
 .hero-links .btn {
-  background: #00ffe7;
+  background: #445c4b;
   color: #23272f;
   font-weight: 600;
   padding: 0.7em 2.2em;
@@ -97,11 +97,11 @@ html, body {
   font-size: 1.08rem;
   letter-spacing: 1px;
   transition: background 0.15s, color 0.15s;
-  box-shadow: 0 6px 24px #00ffe733;
+  box-shadow: 0 6px 24px #445c4b33;
 }
 .hero-links .btn:hover {
   background: #23272f;
-  color: #00ffe7;
+  color: #445c4b;
 }
 
 .hero::before {

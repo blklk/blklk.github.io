@@ -9,67 +9,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-container">
-      <span class="nav-title">blklk</span>
-      <ul class="nav-tabs">
-        <li><a href="#home" class="active" id="tab-home">Home</a></li>
-        <li><a href="#code" id="tab-code">Code</a></li>
-        <li><a href="#cad" id="tab-cad">CAD</a></li>
-        <li><a href="#research" id="tab-research">Research</a></li>
-        <li><a href="#art" id="tab-art">Art</a></li>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">blklk<span class="dot">.</span></div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#code">Code</a></li>
+        <li><a href="#cad">CAD</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#art">Art</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Minimal HTML5 Portfolio Template</h1>
+      <p>
+        Save time, look more professional, and win more clients.<br>
+        Showcasing code, CAD, research, and art.
+      </p>
+      <div class="hero-links">
+        <a href="#portfolio" class="btn">View Portfolio</a>
+      </div>
     </div>
-  </nav>
-  <main>
-    <section id="home-section" class="tab-section active">
-      <h1>Welcome</h1>
-      <p>This is <strong>blklk</strong>'s minimalist portfolio.<br>
-      Edit <code>#home-section</code> in <code>index.html</code> to customize your homepage.</p>
-      <p>Showcasing <span class="highlight">code</span>, <span class="highlight">CAD models</span>, <span class="highlight">research</span>, and <span class="highlight">art</span>.</p>
-    </section>
-    <section id="code-section" class="tab-section">
-      <h2>Code Projects</h2>
-      <ul>
-        <li><a href="https://github.com/blklk/project1" target="_blank">Project 1</a> &mdash; Short description.</li>
-        <li><a href="https://github.com/blklk/project2" target="_blank">Project 2</a> &mdash; Short description.</li>
-      </ul>
-    </section>
-    <section id="cad-section" class="tab-section">
-      <h2>CAD Models</h2>
-      <div class="gallery">
-        <img src="cad1.png" alt="CAD Model 1">
-        <img src="cad2.png" alt="CAD Model 2">
-      </div>
-    </section>
-    <section id="research-section" class="tab-section">
-      <h2>Research</h2>
-      <ul>
-        <li><a href="research-paper1.pdf" target="_blank">Paper Title 1</a> &mdash; Short summary.</li>
-      </ul>
-    </section>
-    <section id="art-section" class="tab-section">
-      <h2>Art</h2>
-      <div class="gallery">
-        <img src="art1.jpg" alt="Art 1">
-        <img src="art2.jpg" alt="Art 2">
-      </div>
-    </section>
-  </main>
-  <script>
-    // For smooth tab switching without reload (optional, can remove if you want hash navigation)
-    document.querySelectorAll('.nav-tabs a').forEach(tab => {
-      tab.addEventListener('click', function (e) {
-        e.preventDefault();
-        // Remove 'active' class from all tabs and sections
-        document.querySelectorAll('.nav-tabs a').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
-        // Add 'active' class to clicked tab and its section
-        this.classList.add('active');
-        const sectionId = this.id.replace('tab','').toLowerCase() + '-section';
-        document.getElementById(sectionId).classList.add('active');
-      });
-    });
-  </script>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </header>
+  <!-- Add your about, portfolio, contact sections here -->
 </body>
 </html>

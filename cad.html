@@ -25,20 +25,23 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/stlviewer@2.7.0/dist/stlviewer.min.js"></script>
   <script>
-    // List of your STL files (update these paths as needed)
+    // List your STL files here (relative to your repo structure)
     const stlFiles = [
       "DAC-bodies/standard/part1.stl",
       "DAC-bodies/standard/part2.stl",
       "DAC-holders/holder1.stl",
       "DAC-standard-parts/part3.stl"
+      // ...add more as needed
     ];
     const repoURL = "https://raw.githubusercontent.com/blklk/CAD-models/main/";
 
     const container = document.getElementById("cad-viewers");
     stlFiles.forEach((path, i) => {
+      // Container for each CAD model
       const wrapper = document.createElement("div");
       wrapper.style.marginBottom = "2em";
 
+      // 3D viewer
       const div = document.createElement("div");
       div.className = "cad-viewer";
       div.id = "stl_cont_" + i;
@@ -49,6 +52,7 @@
       div.style.boxShadow = "0 2px 12px #0002";
       wrapper.appendChild(div);
 
+      // Download link
       const a = document.createElement("a");
       a.href = repoURL + path;
       a.download = path.split("/").pop();
@@ -57,8 +61,10 @@
       a.style.marginTop = "0.4em";
       wrapper.appendChild(a);
 
+      // Add to main container
       container.appendChild(wrapper);
 
+      // Add STL viewer
       new StlViewer(div, {
         models: [{ filename: repoURL + path }]
       });

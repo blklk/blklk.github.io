@@ -25,49 +25,83 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/stlviewer@2.7.0/dist/stlviewer.min.js"></script>
   <script>
-    // List your STL files here (relative to your repo structure)
-    const stlFiles = [
-      "DAC-bodies/standard/DAC-standard-cylinder.stl",
-      "DAC-bodies/standard/DAC-standard-piston.stl",
-      "DAC-holders/holder1.stl",
-      "DAC-standard-parts/part3.stl"
-      // ...add more as needed
+    // List of models: provide names, STL, and STEP paths
+    const models = [
+      {
+        name: "DAC Standard Cylinder",
+        stl: "DAC-standard-parts/DAC-standard-cylinder.stl",
+        step: "DAC-standard-parts/DAC-standard-cylinder.step"
+      }
+      // Add more models here as needed
     ];
+
     const repoURL = "https://raw.githubusercontent.com/blklk/CAD-models/main/";
 
     const container = document.getElementById("cad-viewers");
-    stlFiles.forEach((path, i) => {
-      // Container for each CAD model
+    models.forEach((model, i) => {
       const wrapper = document.createElement("div");
-      wrapper.style.marginBottom = "2em";
+      wrapper.style.margin = "2em auto";
+      wrapper.style.maxWidth = "400px";
+      wrapper.style.textAlign = "center";
 
-      // 3D viewer
+      // Model title
+      const title = document.createElement("h2");
+      title.textContent = model.name;
+      title.style.fontSize = "1.25rem";
+      title.style.fontWeight = "600";
+      title.style.color = "#23272f";
+      wrapper.appendChild(title);
+
+      // STL Viewer
       const div = document.createElement("div");
       div.className = "cad-viewer";
       div.id = "stl_cont_" + i;
       div.style.width = "400px";
       div.style.height = "300px";
-      div.style.background = "#f2f2f2";
-      div.style.borderRadius = "8px";
+      div.style.background = "#fafbfc";
+      div.style.borderRadius = "10px";
+      div.style.margin = "0 auto";
       div.style.boxShadow = "0 2px 12px #0002";
+      div.style.border = "1px solid #e3e6ea";
       wrapper.appendChild(div);
 
-      // Download link
-      const a = document.createElement("a");
-      a.href = repoURL + path;
-      a.download = path.split("/").pop();
-      a.innerText = "Download " + path.split("/").pop();
-      a.style.display = "block";
-      a.style.marginTop = "0.4em";
-      wrapper.appendChild(a);
+      // Add STL viewer if STL file is specified
+      if(model.stl) {
+        new StlViewer(div, {
+          models: [{ filename: repoURL + model.stl }]
+        });
+      } else {
+        div.textContent = "No STL preview available.";
+        div.style.display = "flex";
+        div.style.alignItems = "center";
+        div.style.justifyContent = "center";
+        div.style.color = "#aaa";
+      }
 
-      // Add to main container
+      // Download links
+      const linkContainer = document.createElement("div");
+      linkContainer.style.marginTop = "1em";
+
+      if(model.stl) {
+        const stlA = document.createElement("a");
+        stlA.href = repoURL + model.stl;
+        stlA.download = model.stl.split("/").pop();
+        stlA.textContent = "Download STL";
+        stlA.className = "download-link";
+        stlA.style.marginRight = "1.5em";
+        linkContainer.appendChild(stlA);
+      }
+      if(model.step) {
+        const stepA = document.createElement("a");
+        stepA.href = repoURL + model.step;
+        stepA.download = model.step.split("/").pop();
+        stepA.textContent = "Download STEP";
+        stepA.className = "download-link";
+        linkContainer.appendChild(stepA);
+      }
+      wrapper.appendChild(linkContainer);
+
       container.appendChild(wrapper);
-
-      // Add STL viewer
-      new StlViewer(div, {
-        models: [{ filename: repoURL + path }]
-      });
     });
   </script>
 </body>

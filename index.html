@@ -8,34 +8,60 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
+  <nav class="tabs">
+    <input type="radio" id="home" name="tab" checked>
+    <label for="home">Home</label>
+    <input type="radio" id="code" name="tab">
+    <label for="code">Code</label>
+    <input type="radio" id="cad" name="tab">
+    <label for="cad">CAD</label>
+    <input type="radio" id="research" name="tab">
+    <label for="research">Research</label>
+    <input type="radio" id="art" name="tab">
+    <label for="art">Art</label>
+  </nav>
+  <main>
+    <section class="tab-content" id="home-content">
+      <!-- Edit below for a custom homepage -->
       <h1>blklk</h1>
-      <p>Code | CAD | Research | Art</p>
-    </header>
-    <div class="tabs">
-      <input type="radio" id="tab1" name="tab-group" checked>
-      <label for="tab1">Code</label>
-      <input type="radio" id="tab2" name="tab-group">
-      <label for="tab2">CAD</label>
-      <input type="radio" id="tab3" name="tab-group">
-      <label for="tab3">Research</label>
-      <input type="radio" id="tab4" name="tab-group">
-      <label for="tab4">Art</label>
-
-      <div class="tab-content" id="content1">
-        <p>Showcase your code projects here.</p>
+      <p>Welcome to my minimalist portfolio.<br>
+      <b>Customize this homepage by editing <code>#home-content</code> in <code>index.html</code>.</b></p>
+      <p>Showcasing <span class="highlight">code</span>, <span class="highlight">CAD models</span>, <span class="highlight">research</span>, and <span class="highlight">art</span>.</p>
+      <!-- Add anything: images, links, widgets, etc. -->
+    </section>
+    <section class="tab-content" id="code-content">
+      <h2>Code</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/blklk/project1" target="_blank">Project 1</a> — description
+        </li>
+        <li>
+          <a href="https://github.com/blklk/project2" target="_blank">Project 2</a> — description
+        </li>
+      </ul>
+    </section>
+    <section class="tab-content" id="cad-content">
+      <h2>CAD Models</h2>
+      <div class="gallery">
+        <img src="cad1.png" alt="CAD Model 1">
+        <img src="cad2.png" alt="CAD Model 2">
       </div>
-      <div class="tab-content" id="content2">
-        <p>Showcase your CAD models here.</p>
+    </section>
+    <section class="tab-content" id="research-content">
+      <h2>Research</h2>
+      <ul>
+        <li>
+          <a href="research-paper1.pdf" target="_blank">Paper Title 1</a> — short summary.
+        </li>
+      </ul>
+    </section>
+    <section class="tab-content" id="art-content">
+      <h2>Art</h2>
+      <div class="gallery">
+        <img src="art1.jpg" alt="Art 1">
+        <img src="art2.jpg" alt="Art 2">
       </div>
-      <div class="tab-content" id="content3">
-        <p>Showcase your research here.</p>
-      </div>
-      <div class="tab-content" id="content4">
-        <p>Showcase your art here.</p>
-      </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </body>
 </html>

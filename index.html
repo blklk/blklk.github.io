@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>blklk | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>blklk</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#code">Code</a></li>
+        <li><a href="#cad">CAD Models</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#art">Art</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main>
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>
+        Hi! I’m blklk. This site showcases my <b>code</b>, <b>CAD models</b>, <b>research</b>, and <b>art</b>.
+      </p>
+    </section>
+    <section id="code">
+      <h2>Code</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/blklk/project1" target="_blank">Project 1</a> - Short description.
+        </li>
+        <li>
+          <a href="https://github.com/blklk/project2" target="_blank">Project 2</a> - Short description.
+        </li>
+        <!-- Add more projects as needed -->
+      </ul>
+    </section>
+    <section id="cad">
+      <h2>CAD Models</h2>
+      <div class="gallery">
+        <img src="cad1.png" alt="CAD Model 1">
+        <img src="cad2.png" alt="CAD Model 2">
+        <!-- Add more images or embed 3D viewers if desired -->
+      </div>
+    </section>
+    <section id="research">
+      <h2>Research</h2>
+      <ul>
+        <li>
+          <a href="research-paper1.pdf" target="_blank">Paper Title 1</a> - Short abstract or summary.
+        </li>
+        <li>
+          <a href="research-paper2.pdf" target="_blank">Paper Title 2</a> - Short abstract or summary.
+        </li>
+      </ul>
+    </section>
+    <section id="art">
+      <h2>Art</h2>
+      <div class="gallery">
+        <img src="art1.jpg" alt="Art 1">
+        <img src="art2.jpg" alt="Art 2">
+        <!-- Add more images -->
+      </div>
+    </section>
+  </main>
+  <script>
+    // Simple navigation highlight
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.querySelectorAll('.sidebar a').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

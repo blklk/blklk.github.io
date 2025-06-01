@@ -2,9 +2,9 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', Arial, sans-serif;
-  height: 100%;
-  background: #18191a;
-  color: #18191a;
+  background: #f8f9fa;
+  color: #23272f;
+  min-height: 100%;
 }
 
 .hero {
@@ -16,14 +16,29 @@ html, body {
   background: url('me-mountains.jpg') center center/cover no-repeat;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #fff 25%, #ffffff88 50%, #e4e6eb11 80%);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.hero-content,
+.navbar {
+  position: relative;
+  z-index: 2;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 5vw 1.5rem 5vw;
-  background: rgba(255,255,255,0.04);
+  padding: 1.5rem 5vw 1.5rem 5vw;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
 }
-
 .logo {
   font-weight: bold;
   font-size: 1.45rem;
@@ -33,7 +48,6 @@ html, body {
 .logo .dot {
   color: #445c4b;
 }
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -104,21 +118,6 @@ html, body {
   color: #445c4b;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(100deg, #fff 25%, #ffffff88 50%, #e4e6eb11 80%);
-  opacity: 0.7;
-  z-index: 1;
-}
-
-.hero-content,
-.navbar {
-  position: relative;
-  z-index: 2;
-}
-
 .scroll-indicator {
   position: absolute;
   left: 50%;
@@ -154,25 +153,32 @@ html, body {
   100% { top: 10px; opacity: 1;}
 }
 
+main {
+  max-width: 800px;
+  margin: 3em auto 2em auto;
+  padding: 0 1em;
+}
+h1 {
+  font-size: 2.4rem;
+  margin-top: 0;
+  color: #23272f;
+  font-weight: 700;
+}
+.cad-viewer {
+  margin-bottom: 1em;
+}
+
+body {
+  min-height: 100vh;
+}
+
 @media (max-width: 850px) {
-  .hero-content { 
-    margin-left: 5vw; 
-    max-width: 95vw; 
-  }
-  .navbar { 
-    flex-direction: column; 
-    gap: 1rem; 
-    padding: 2rem 2vw 1rem 2vw;
-  }
+  .hero-content { margin-left: 5vw; max-width: 95vw; }
+  .navbar { flex-direction: column; gap: 1rem; padding: 1rem 2vw 1rem 2vw;}
   .nav-links { gap: 1rem; }
+  main { margin: 2em 0 1em 0; }
 }
 @media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 1.2rem;
-  }
-  .hero-content p {
-    font-size: 1em;
-    max-width: 100%;
-  }
-  .navbar { padding: 1.2rem 2vw 0.5rem 2vw;}
+  h1 { font-size: 1.4rem; }
+  .navbar { padding: 1rem 2vw 0.5rem 2vw;}
 }

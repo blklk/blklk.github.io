@@ -8,60 +8,44 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="tabs">
-    <input type="radio" id="home" name="tab" checked>
-    <label for="home">Home</label>
-    <input type="radio" id="code" name="tab">
-    <label for="code">Code</label>
-    <input type="radio" id="cad" name="tab">
-    <label for="cad">CAD</label>
-    <input type="radio" id="research" name="tab">
-    <label for="research">Research</label>
-    <input type="radio" id="art" name="tab">
-    <label for="art">Art</label>
-  </nav>
-  <main>
-    <section class="tab-content" id="home-content">
-      <!-- Edit below for a custom homepage -->
+  <div class="container">
+    <header>
       <h1>blklk</h1>
-      <p>Welcome to my minimalist portfolio.<br>
-      <b>Customize this homepage by editing <code>#home-content</code> in <code>index.html</code>.</b></p>
-      <p>Showcasing <span class="highlight">code</span>, <span class="highlight">CAD models</span>, <span class="highlight">research</span>, and <span class="highlight">art</span>.</p>
-      <!-- Add anything: images, links, widgets, etc. -->
-    </section>
-    <section class="tab-content" id="code-content">
+      <p class="subtitle">Code <span>|</span> CAD <span>|</span> Research <span>|</span> Art</p>
+    </header>
+    <nav class="tab-nav">
+      <button class="tab active" data-tab="code">Code</button>
+      <button class="tab" data-tab="cad">CAD</button>
+      <button class="tab" data-tab="research">Research</button>
+      <button class="tab" data-tab="art">Art</button>
+    </nav>
+    <section class="tab-content active" id="tab-code">
       <h2>Code</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/blklk/project1" target="_blank">Project 1</a> — description
-        </li>
-        <li>
-          <a href="https://github.com/blklk/project2" target="_blank">Project 2</a> — description
-        </li>
-      </ul>
+      <p>Showcase your code projects here.</p>
     </section>
-    <section class="tab-content" id="cad-content">
+    <section class="tab-content" id="tab-cad">
       <h2>CAD Models</h2>
-      <div class="gallery">
-        <img src="cad1.png" alt="CAD Model 1">
-        <img src="cad2.png" alt="CAD Model 2">
-      </div>
+      <p>Showcase your CAD models here.</p>
     </section>
-    <section class="tab-content" id="research-content">
+    <section class="tab-content" id="tab-research">
       <h2>Research</h2>
-      <ul>
-        <li>
-          <a href="research-paper1.pdf" target="_blank">Paper Title 1</a> — short summary.
-        </li>
-      </ul>
+      <p>Showcase your research here.</p>
     </section>
-    <section class="tab-content" id="art-content">
+    <section class="tab-content" id="tab-art">
       <h2>Art</h2>
-      <div class="gallery">
-        <img src="art1.jpg" alt="Art 1">
-        <img src="art2.jpg" alt="Art 2">
-      </div>
+      <p>Showcase your art here.</p>
     </section>
-  </main>
+  </div>
+  <script>
+    // Simple JS for tab switching
+    document.querySelectorAll('.tab').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>

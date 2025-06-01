@@ -2,11 +2,12 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', Arial, sans-serif;
-  background: #f8f9fa;
+  background: #f7fafd;               /* lighter background */
   color: #23272f;
   min-height: 100%;
 }
 
+/* Home hero: keep your photo! */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -16,12 +17,13 @@ html, body {
   background: url('me-mountains.jpg') center center/cover no-repeat;
 }
 
+/* Softer overlay for home hero */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, #fff 25%, #ffffff88 50%, #e4e6eb11 80%);
-  opacity: 0.7;
+  background: linear-gradient(100deg, #fff 30%, #f7fafd80 80%);
+  opacity: 0.85;
   z-index: 1;
 }
 
@@ -35,9 +37,10 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5vw 1.5rem 5vw;
-  background: #fff;
+  padding: 1.5rem 5vw;
+  background: #ffffffee;              /* semi-opaque white */
   border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px #0001;
 }
 .logo {
   font-weight: bold;
@@ -46,7 +49,7 @@ html, body {
   letter-spacing: 1.5px;
 }
 .logo .dot {
-  color: #445c4b;
+  color: #5cb48c;                     /* lighter green accent */
 }
 .nav-links {
   list-style: none;
@@ -62,15 +65,15 @@ html, body {
   letter-spacing: 0.5px;
   font-size: 1em;
   opacity: 0.85;
-  transition: color 0.2s, opacity 0.2s;
+  transition: color 0.2s, opacity 0.2s, border-bottom 0.2s;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
 }
 .nav-links li a.active,
 .nav-links li a:hover {
-  color: #445c4b;
+  color: #5cb48c;
   opacity: 1;
-  border-bottom: 2px solid #445c4b;
+  border-bottom: 2px solid #5cb48c;
 }
 
 .hero-content {
@@ -101,7 +104,7 @@ html, body {
   max-width: 80%;
 }
 .hero-links .btn {
-  background: #445c4b;
+  background: #5cb48c;
   color: #23272f;
   font-weight: 600;
   padding: 0.7em 2.2em;
@@ -111,11 +114,11 @@ html, body {
   font-size: 1.08rem;
   letter-spacing: 1px;
   transition: background 0.15s, color 0.15s;
-  box-shadow: 0 6px 24px #445c4b33;
+  box-shadow: 0 6px 24px #5cb48c22;
 }
 .hero-links .btn:hover {
   background: #23272f;
-  color: #445c4b;
+  color: #5cb48c;
 }
 
 .scroll-indicator {
@@ -154,18 +157,32 @@ html, body {
 }
 
 main {
-  max-width: 800px;
-  margin: 3em auto 2em auto;
+  max-width: 900px;
+  margin: 2.5em auto 2em auto;
   padding: 0 1em;
 }
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   margin-top: 0;
   color: #23272f;
   font-weight: 700;
 }
 .cad-viewer {
   margin-bottom: 1em;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #0002;
+  border: 1px solid #e3e6ea;
+}
+
+a {
+  color: #366a48;
+  text-decoration: underline;
+  font-weight: 500;
+}
+a:hover {
+  color: #23272f;
+  text-decoration: none;
 }
 
 body {
@@ -174,11 +191,11 @@ body {
 
 @media (max-width: 850px) {
   .hero-content { margin-left: 5vw; max-width: 95vw; }
-  .navbar { flex-direction: column; gap: 1rem; padding: 1rem 2vw 1rem 2vw;}
+  .navbar { flex-direction: column; gap: 1rem; padding: 1rem 2vw;}
   .nav-links { gap: 1rem; }
   main { margin: 2em 0 1em 0; }
 }
 @media (max-width: 600px) {
   h1 { font-size: 1.4rem; }
-  .navbar { padding: 1rem 2vw 0.5rem 2vw;}
+  .navbar { padding: 1rem 2vw;}
 }

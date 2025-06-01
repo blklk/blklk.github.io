@@ -13,18 +13,18 @@
     <nav class="navbar">
       <div class="logo">blklk<span class="dot">.</span></div>
       <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#code">Code</a></li>
-        <li><a href="#cad">CAD</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#art">Art</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="code.html">Code</a></li>
+        <li><a href="cad.html">CAD</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="art.html">Art</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="hero-content">
-      <h1>Welcome </h1>
+      <h1>Welcome</h1>
       <p>
-       Under development.
+        Under development.
       </p>
       <div class="hero-links">
         <a href="#about" class="btn">About</a>
@@ -34,114 +34,5 @@
       <span></span>
     </div>
   </header>
-
-  <!-- SECTIONS LINKED TO NAV TABS (IDs must match the hrefs) -->
-  <section id="code" class="section">
-    <h2>Code</h2>
-    <p>Codes.</p>
-    <img src="code-example.png" alt="Code example" />
-  </section>
-  <section id="cad" class="section">
-  <h2>CAD Models</h2>
-  <div id="cad-viewers"></div>
-  <script src="https://cdn.jsdelivr.net/npm/stlviewer@2.7.0/dist/stlviewer.min.js"></script>
-  <script>
-    // List your STL files here (relative to your repo structure)
-    const stlFiles = [
-      "DAC-bodies/standard/part1.stl",
-      "DAC-bodies/standard/part2.stl",
-      "DAC-holders/holder1.stl",
-      "DAC-standard-parts/part3.stl"
-      // ...add more as needed
-    ];
-    const repoURL = "https://raw.githubusercontent.com/blklk/CAD-models/main/";
-
-    const container = document.getElementById("cad-viewers");
-    stlFiles.forEach((path, i) => {
-      // Container for each CAD model
-      const wrapper = document.createElement("div");
-      wrapper.style.marginBottom = "2em";
-
-      // 3D viewer
-      const div = document.createElement("div");
-      div.className = "cad-viewer";
-      div.id = "stl_cont_" + i;
-      div.style.width = "400px";
-      div.style.height = "300px";
-      div.style.background = "#f2f2f2";
-      div.style.borderRadius = "8px";
-      div.style.boxShadow = "0 2px 12px #0002";
-      wrapper.appendChild(div);
-
-      // Download link
-      const a = document.createElement("a");
-      a.href = repoURL + path;
-      a.download = path.split("/").pop();
-      a.innerText = "Download " + path.split("/").pop();
-      a.style.display = "block";
-      a.style.marginTop = "0.4em";
-      wrapper.appendChild(a);
-
-      // Add to main container
-      container.appendChild(wrapper);
-
-      // Add STL viewer
-      new StlViewer(div, {
-        models: [{ filename: repoURL + path }]
-      });
-    });
-  </script>
-    </section>
-  <section id="cad" class="section">
-  <h2>CAD Models</h2>
-  <div id="cad-viewers"></div>
-  <script src="https://cdn.jsdelivr.net/npm/stlviewer@2.7.0/dist/stlviewer.min.js"></script>
-  <script>
-    const stlFiles = [
-      // "DAC-bodies/standard/part1.stl",
-      // etc. Make sure these files exist and are public!
-    ];
-    const repoURL = "https://raw.githubusercontent.com/blklk/CAD-models/main/";
-    const container = document.getElementById("cad-viewers");
-    stlFiles.forEach((path, i) => {
-      const wrapper = document.createElement("div");
-      wrapper.style.marginBottom = "2em";
-
-      const div = document.createElement("div");
-      div.className = "cad-viewer";
-      div.id = "stl_cont_" + i;
-      div.style.width = "400px";
-      div.style.height = "300px";
-      wrapper.appendChild(div);
-
-      const a = document.createElement("a");
-      a.href = repoURL + path;
-      a.download = path.split("/").pop();
-      a.innerText = "Download " + path.split("/").pop();
-      wrapper.appendChild(a);
-
-      container.appendChild(wrapper);
-
-      new StlViewer(div, {
-        models: [{ filename: repoURL + path }]
-      });
-    });
-  </script>
-
-</section>
-  <section id="research" class="section">
-    <h2>Research</h2>
-    <p>Research.</p>
-    <img src="research-paper-thumbnail.png" alt="Research Paper" />
-  </section>
-  <section id="art" class="section">
-    <h2>Art</h2>
-    <p>Art.</p>
-    <img src="art1.jpg" alt="Art 1" />
-  </section>
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Get in touch: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-  </section>
 </body>
 </html>

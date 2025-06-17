@@ -38,7 +38,14 @@
       height: auto;
       display: block;
       object-fit: contain;
+      /* subtle shadow */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
       loading: lazy;
+    }
+    .gallery img:hover {
+      /* lift a bit on hover */
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     }
     .gallery figcaption {
       font-size: 0.9rem;
@@ -50,18 +57,18 @@
 </head>
 <body>
 
-  <h1>My Art Collection</h1>
+  <h1>My Art</h1>
 
   <section class="gallery">
     <!-- Repeat for each artwork -->
     <figure>
       <img src="Art/SEH-Wine_Label-final.png" alt="Title of Artwork #1">
-      <figcaption>Title of Artwork #1</figcaption>
+      <figcaption>St Edmund Hall Wine Label - Contest Winner</figcaption>
     </figure>
 
     <figure>
       <img src="Art/highres2.jpg" alt="Title of Artwork #2">
-      <figcaption>Title of Artwork #2</figcaption>
+      <figcaption>Earth Science Department Gazebo Artwork for Outreach (Natural Hazards) funded by COMET</figcaption>
     </figure>
 
     <!-- …and so on… -->

@@ -2,171 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Art Showcase</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Minimal Art Gallery</title>
   <style>
-    :root {
-      --gap: 1rem;
-      --thumb-height: 200px;
-      --modal-bg: rgba(0,0,0,0.8);
-      --transition: 0.3s ease-in-out;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    /* Reset & base */
+    *, *::before, *::after { box-sizing: border-box; }
     body {
-      font-family: sans-serif;
-      line-height: 1.4;
-      background: #fafafa;
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: var(--gap) 0;
+      margin: 0;
+      font-family: system-ui, sans-serif;
       background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: var(--gap);
+      color: #000;
+      line-height: 1.5;
+    }
+    h1 {
+      font-size: 1.75rem;
+      text-align: center;
+      margin: 1rem 0;
     }
 
-    header h1 {
-      font-size: 2rem;
-    }
-
+    /* Responsive grid */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: var(--gap);
-      padding: 0 var(--gap);
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      padding: 0 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .gallery figure {
-      background: #fff;
-      border: 1px solid #ddd;
-      overflow: hidden;
-      transition: box-shadow var(--transition);
+      margin: 0;
     }
-    .gallery figure:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
     .gallery img {
-      display: block;
       width: 100%;
-      height: var(--thumb-height);
-      object-fit: cover;
-      cursor: pointer;
-      transition: transform var(--transition);
+      height: auto;
+      display: block;
+      object-fit: contain;
+      loading: lazy;
     }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
     .gallery figcaption {
-      padding: 0.5rem;
-      text-align: center;
       font-size: 0.9rem;
-      background: #fff;
-    }
-
-    /* Lightbox */
-    #lightbox {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: var(--modal-bg);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-    #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-    #lightbox .close {
-      position: absolute;
-      top: 1rem; right: 1rem;
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
+      text-align: center;
+      padding: 0.5rem 0;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>My Art Showcase</h1>
-  </header>
+  <h1>My Art Collection</h1>
 
-  <main>
-    <section class="gallery">
-      <!-- Repeat this figure block for each piece of art -->
-      <figure>
-        <img 
-          src="Art/SEH-Wine_Label-final.png" 
-          data-full="Art/SEH-Wine_Label-final.png" 
-          alt="Title of Artwork #1"
-          loading="lazy"
-        >
-        <figcaption>Title of Artwork #1</figcaption>
-      </figure>
+  <section class="gallery">
+    <!-- Repeat for each artwork -->
+    <figure>
+      <img src="Art/SEH-Wine_Label-final.png" alt="Title of Artwork #1">
+      <figcaption>Title of Artwork #1</figcaption>
+    </figure>
 
-      <figure>
-        <img 
-          src="Art/thumb2.jpg" 
-          data-full="Art/highres2.jpg" 
-          alt="Title of Artwork #2"
-          loading="lazy"
-        >
-        <figcaption>Title of Artwork #2</figcaption>
-      </figure>
+    <figure>
+      <img src="Art/highres2.jpg" alt="Title of Artwork #2">
+      <figcaption>Title of Artwork #2</figcaption>
+    </figure>
 
-      <!-- ...more artworks... -->
-    </section>
-  </main>
+    <!-- …and so on… -->
+  </section>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox">
-    <span class="close">&times;</span>
-    <img src="" alt="">
-  </div>
-
-  <script>
-    // Open lightbox on thumbnail click
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        const lb = document.getElementById('lightbox');
-        const lbImg = lb.querySelector('img');
-        lbImg.src = img.dataset.full;
-        lbImg.alt = img.alt;
-        lb.style.display = 'flex';
-      });
-    });
-
-    // Close lightbox
-    document.querySelector('#lightbox .close').addEventListener('click', () => {
-      document.getElementById('lightbox').style.display = 'none';
-    });
-
-    // Close on background click
-    document.getElementById('lightbox').addEventListener('click', e => {
-      if (e.target.id === 'lightbox') {
-        e.currentTarget.style.display = 'none';
-      }
-    });
-
-    // Escape key
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        document.getElementById('lightbox').style.display = 'none';
-      }
-    });
-  </script>
 </body>
 </html>
+

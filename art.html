@@ -1,61 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Minimal Art Gallery</title>
-  <style>
-    /* Reset & base */
-    *, *::before, *::after { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      background: #fff;
-      color: #000;
-      line-height: 1.5;
-    }
-    h1 {
-      font-size: 1.75rem;
-      text-align: center;
-      margin: 1rem 0;
-    }
-
-    /* Responsive grid */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      padding: 0 1rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .gallery figure {
-      margin: 0;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-      /* subtle shadow */
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s ease;
-      loading: lazy;
-    }
-    .gallery img:hover {
-      /* lift a bit on hover */
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    }
-    .gallery figcaption {
-      font-size: 0.9rem;
-      text-align: center;
-      padding: 0.5rem 0;
-      opacity: 0.7;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Art – blklk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Showcasing code, CAD, research, and art.">
+  
+  <!-- Global styles & fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Gallery-only styles -->
+  <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
+
+  <!-- ————— Copy this entire block from your main page ————— -->
+  <header class="hero" id="home">
+    <nav class="navbar">
+      <div class="logo">blklk<span class="dot">.</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="code.html">Code</a></li>
+        <li><a href="cad.html">CAD</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="art.html" class="active">Art</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- ———————————————————————————————————————————————— -->
 
   <h1>My Art</h1>
 

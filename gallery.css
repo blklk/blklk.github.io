@@ -1,9 +1,10 @@
 /* Optional override: remove the mountain background/overlay on this page */
 header.hero {
-  background: none;
+  background: none !important;
+  min-height: auto !important;
 }
 header.hero::before {
-  display: none;
+  display: none !important;
 }
 
 /* Keep the navbar style from style.css intact—.navbar will still show its semi-opaque white bg and box-shadow */

@@ -1,7 +1,7 @@
 /* Optional override: remove the mountain background/overlay on this page */
 header.hero {
   /* background: none !important; */
-  background-color: #B3A394;   /* <- put it here */
+  background-color: #2C3E50;   /*  #B3A394 <- put it here */
   min-height: auto !important;
 }
 header.hero::before {
@@ -22,7 +22,7 @@ header.hero::before {
   max-width: 1200px;
   margin: 0 auto;
   background-color: #B3A394;   /* <- put it here */
-  border-radius: 8px;          /* <- and keep the rounding */
+  border-radius: 4px;          /* <- and keep the rounding */
 }
 
 .gallery figure {

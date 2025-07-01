@@ -1,6 +1,7 @@
 /* Optional override: remove the mountain background/overlay on this page */
 header.hero {
-  background: none !important;
+  /* background: none !important; */
+  background-color: #B3A394;   /* <- put it here */
   min-height: auto !important;
 }
 header.hero::before {

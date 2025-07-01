@@ -14,50 +14,53 @@
   <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-
-  <!-- ————— Copy this entire block from your main page ————— -->
-
   <header>
     <nav class="navbar">
       <div class="logo">blklk<span class="dot">.</span></div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <!--
-        <li><a href="code.html">Code</a></li>
-        <li><a href="cad.html">CAD</a></li>
-        <li><a href="research.html">Research</a></li>
-        -->
         <li><a href="art.html" class="active">Art</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  <!-- ———————————————————————————————————————————————— -->
 
-  <h1>My Art</h1>
+  <main>
+    <section class="gallery-header">
+      <h1>My Art</h1>
+      <p class="intro">A curated selection of my work, presented in a clean, professional gallery layout.</p>
+    </section>
 
-  <section class="gallery">
-    <!-- Repeat for each artwork -->
-    <figure>
-      <img src="Art/SEH-Wine_Label-final.png" alt="SEH Wine Label (Digital)">
-      <figcaption>St Edmund Hall Wine Label - Contest Winner</figcaption>
-    </figure>
+    <section class="gallery">
+      <!-- Repeat for each artwork -->
+      <figure class="gallery-item">
+        <a href="Art/SEH-Wine_Label-final.png" target="_blank">
+          <img src="Art/SEH-Wine_Label-final.png" alt="St Edmund Hall Wine Label (Digital)">
+        </a>
+        <figcaption>St Edmund Hall Wine Label<br><span class="caption-sub">Contest Winner</span></figcaption>
+      </figure>
 
-    <figure>
-      <img src="Art/smaller-lightoutline_earthsci.jpg" alt="Natural Hazards (Digital)">
-      <figcaption>Earth Science Department Gazebo Artwork for Outreach (Natural Hazards) funded by NERC-COMET</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Art/smaller-lightoutline_earthsci.jpg" target="_blank">
+          <img src="Art/smaller-lightoutline_earthsci.jpg" alt="Earth Science Department Gazebo Artwork">
+        </a>
+        <figcaption>Earth Science Dept. Gazebo Artwork<br><span class="caption-sub">Natural Hazards (NERC-COMET)</span></figcaption>
+      </figure>
 
-    <figure>
-      <img src="Art/ighthouse-oil.jpg" alt="Lighthouse (Oil on Canvas)">
-      <figcaption>Lighthouse (Oill on Canvas)</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Art/ighthouse-oil.jpg" target="_blank">
+          <img src="Art/ighthouse-oil.jpg" alt="Lighthouse (Oil on Canvas)">
+        </a>
+        <figcaption>Lighthouse<br><span class="caption-sub">Oil on Canvas</span></figcaption>
+      </figure>
 
-    
+      <!-- Add more figures as needed -->
+    </section>
+  </main>
 
-    <!-- …and so on… -->
-  </section>
-
+  <footer>
+    <p>&copy; 2025 blklk. All rights reserved.</p>
+  </footer>
 </body>
 </html>
 

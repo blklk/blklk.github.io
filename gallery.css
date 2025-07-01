@@ -12,19 +12,16 @@ header.hero::before {
 /* ===== Your gallery styles ===== */
 
 
-.gallery {
-  background-color: #B3A394;
-  padding: 2rem;
-  border-radius: 8px;
-}
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
-  padding: 0 1rem 2rem;
+  padding: 2rem;               /* <- keep the 2rem padding */
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #B3A394;   /* <- put it here */
+  border-radius: 8px;          /* <- and keep the rounding */
 }
 
 .gallery figure {

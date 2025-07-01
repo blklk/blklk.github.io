@@ -6,31 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Showcasing code, CAD, research, and art.">
   
-  <!-- Global styles & fonts -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Global CSS -->
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Gallery-only styles -->
-  <link rel="stylesheet" href="gallery.css">
-  <!-- Inline overrides for larger gallery images -->
+  <!-- Gallery CSS -->
   <style>
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-      padding: 0 1rem;
-    }
+    body { font-family: 'Inter', sans-serif; margin: 0; background: #f4f4f4; }
+    .navbar { background: #222; padding: 1rem; display: flex; align-items: center; }
+    .logo { color: #fff; font-size: 1.5rem; font-weight: 700; }
+    .dot { color: #e94e77; }
+    .nav-links { list-style: none; margin-left: auto; display: flex; gap: 1rem; }
+    .nav-links a { color: #ddd; text-decoration: none; font-weight: 500; }
+    .nav-links a.active, .nav-links a:hover { color: #fff; }
+
+    main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .gallery-header h1 { text-align: center; margin-bottom: 0.2rem; }
+    .gallery-header .intro { text-align: center; color: #555; margin-bottom: 2rem; }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .gallery-item { position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
+      width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
     }
+    .gallery-item:hover img { transform: scale(1.05); }
     .gallery-item figcaption {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      text-align: center;
+      position: absolute; bottom: 0; left: 0; width: 100%;
+      background: rgba(0,0,0,0.6); color: #fff;
+      padding: 0.5rem 1rem; font-size: 0.9rem;
+      transform: translateY(100%); transition: transform 0.3s ease;
     }
+    .gallery-item:hover figcaption { transform: translateY(0); }
+    .caption-sub { display: block; font-size: 0.8rem; color: #ccc; }
+
+    footer { text-align: center; padding: 1rem 0; color: #777; font-size: 0.8rem; }
   </style>
 </head>
 <body>
@@ -48,39 +61,42 @@
   <main>
     <section class="gallery-header">
       <h1>My Art</h1>
-      <p class="intro">A curated selection of my work, presented in a clean, professional gallery layout.</p>
+      <p class="intro">A curated selection of my work in an interactive, professional gallery.</p>
     </section>
 
     <section class="gallery">
-      <!-- Repeat for each artwork -->
       <figure class="gallery-item">
-        <a href="Art/SEH-Wine_Label-final.png" target="_blank">
-          <img src="Art/SEH-Wine_Label-final.png" alt="St Edmund Hall Wine Label (Digital)">
+        <a href="Art/SEH-Wine_Label-final.png" data-lightbox="gallery" data-title="St Edmund Hall Wine Label (Contest Winner)">
+          <img src="Art/SEH-Wine_Label-final.png" alt="St Edmund Hall Wine Label">
         </a>
         <figcaption>St Edmund Hall Wine Label<br><span class="caption-sub">Contest Winner</span></figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <a href="Art/smaller-lightoutline_earthsci.jpg" target="_blank">
-          <img src="Art/smaller-lightoutline_earthsci.jpg" alt="Earth Science Department Gazebo Artwork">
+        <a href="Art/smaller-lightoutline_earthsci.jpg" data-lightbox="gallery" data-title="Earth Science Dept. Gazebo Artwork (Natural Hazards)">
+          <img src="Art/smaller-lightoutline_earthsci.jpg" alt="Earth Science Gazebo Artwork">
         </a>
         <figcaption>Earth Science Dept. Gazebo Artwork<br><span class="caption-sub">Natural Hazards (NERC-COMET)</span></figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <a href="Art/lighthouse-oil.jpg" target="_blank">
-          <img src="Art/lighthouse-oil.jpg" alt="Lighthouse (Oil on Canvas)">
+        <a href="Art/lighthouse-oil.jpg" data-lightbox="gallery" data-title="Lighthouse (Oil on Canvas)">
+          <img src="Art/lighthouse-oil.jpg" alt="Lighthouse Oil Painting">
         </a>
         <figcaption>Lighthouse<br><span class="caption-sub">Oil on Canvas</span></figcaption>
       </figure>
 
-      <!-- Add more figures as needed -->
+      <!-- Add more artwork figures here -->
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 blklk. All rights reserved.</p>
   </footer>
+
+  <!-- Lightbox2 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
+
 

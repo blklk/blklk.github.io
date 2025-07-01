@@ -1,57 +1,79 @@
 /* Optional override: remove the mountain background/overlay on this page */
 header.hero {
-  /* background: none !important; */
-  background-color: #2C3E50;   /*  #B3A394 <- put it here */
+  background-color: #2C3E50;   /* page header background */
   min-height: auto !important;
 }
 header.hero::before {
   display: none !important;
 }
 
-/* Keep the navbar style from style.css intact—.navbar will still show its semi-opaque white bg and box-shadow */
+/* ===== Gallery styles ===== */
 
-/* ===== Your gallery styles ===== */
-
+/* Container: flex layout, tight packing */
 .gallery {
-  display: grid;
-  /* 1. Reduce the minimum size of each “cell” to fit more per row */
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  /* 2. Shrink the gap between items */
-  gap: 0.5rem;
-  /* 3. (Optional) Reduce the padding around the whole gallery */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;               /* small gaps */
+  justify-content: center;  
   padding: 1rem;
   max-width: 1200px;
-  margin: 0 auto;
-
-  background-color: #2C3E50 !important;
+  margin: 1rem auto;
+  background-color: #2C3E50; /* container bg */
   border-radius: 4px;
 }
 
+/* Each figure becomes a positioned “card” */
 .gallery figure {
+  position: relative;        /* for the caption */
+  flex: 1 1 200px;           /* base width ~200px, but shrink & grow */
   margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fff;          /* card bg */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.gallery {
-  background-color: #2C3E50 !important;
-}
-
-
+/* Image styling */
 .gallery img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .gallery img:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
+/* Captions hidden by default */
 .gallery figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 0.5rem 1rem;
   font-size: 0.9rem;
-  text-align: center;
-  padding: 0.5rem 0;
-  opacity: 0.7;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
 }
+
+/* Reveal caption on hover */
+.gallery figure:hover figcaption {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Subtitle styling (inside caption) */
+.gallery .caption-sub {
+  display: block;
+  font-size: 0.8rem;
+  color: #ddd;
+}
+

@@ -46,15 +46,13 @@ a {
 /* ------------------------------------- */
 
 .gallery {
-  column-count: 3;             /* number of columns */
-  column-gap: 0.5rem;          /* space between columns */
+  column-count: 3;        /* or 4, or whatever fits */
+  column-gap: 0.5rem;
   max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #2C3E50;   /* container background */
-  border-radius: 4px;
+  background: none;       /* you can even drop the gallery bg */
 }
-
 /* Responsive column counts */
 @media (max-width: 900px) {
   .gallery {
@@ -77,9 +75,11 @@ a {
   position: relative;          /* for caption positioning */
   overflow: hidden;
   border-radius: 4px;
-  background: #fff;            /* card background */
+  background: transparent;           /* card background */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
+
 
 /* ------------------------------------- */
 /* 5. Images                            */
@@ -87,11 +87,10 @@ a {
 
 .gallery img {
   width: 100%;
+  height: auto;
   display: block;
-  object-fit: contain;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;      /* cover instead of contain */
 }
-
 .gallery img:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 16px rgba(0,0,0,0.15);

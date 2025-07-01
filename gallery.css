@@ -1,52 +1,106 @@
-/* Optional override: remove the mountain background/overlay on this page */
+/* gallery.css */
+
+/* ------------------------------------- */
+/* 1. Page Header Overrides             */
+/* ------------------------------------- */
+
+/* Remove mountain background/overlay */
 header.hero {
-  background-color: #2C3E50;   /* page header background */
+  background-color: #2C3E50;   /* dark slate background for header */
   min-height: auto !important;
 }
 header.hero::before {
   display: none !important;
 }
 
-/* ===== Gallery styles ===== */
+/* ------------------------------------- */
+/* 2. Global Resets & Base Styles       */
+/* ------------------------------------- */
 
-/* Container: flex layout, tight packing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #2C3E50;   /* dark page background */
+  color: #fff;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar is styled in style.css; we’re just ensuring it remains on top */
+.navbar {
+  position: relative;
+  z-index: 100;
+}
+
+/* ------------------------------------- */
+/* 3. Gallery Container (Masonry Layout) */
+/* ------------------------------------- */
+
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;               /* small gaps */
-  justify-content: center;  
-  padding: 1rem;
+  column-count: 3;             /* number of columns */
+  column-gap: 0.5rem;          /* space between columns */
   max-width: 1200px;
-  margin: 1rem auto;
-  background-color: #2C3E50; /* container bg */
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #2C3E50;   /* container background */
   border-radius: 4px;
 }
 
-/* Each figure becomes a positioned “card” */
+/* Responsive column counts */
+@media (max-width: 900px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+@media (max-width: 600px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
+/* ------------------------------------- */
+/* 4. Gallery Items (Figures)           */
+/* ------------------------------------- */
+
 .gallery figure {
-  position: relative;        /* for the caption */
-  flex: 1 1 200px;           /* base width ~200px, but shrink & grow */
-  margin: 0;
+  break-inside: avoid;         /* prevent splitting across columns */
+  margin: 0 0 0.5rem;
+  position: relative;          /* for caption positioning */
   overflow: hidden;
   border-radius: 4px;
-  background: #fff;          /* card bg */
+  background: #fff;            /* card background */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Image styling */
+/* ------------------------------------- */
+/* 5. Images                            */
+/* ------------------------------------- */
+
 .gallery img {
   width: 100%;
-  height: auto;
   display: block;
   object-fit: contain;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .gallery img:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
-/* Captions hidden by default */
+/* ------------------------------------- */
+/* 6. Captions (Hidden Until Hover)     */
+/* ------------------------------------- */
+
 .gallery figcaption {
   position: absolute;
   bottom: 0;
@@ -63,17 +117,28 @@ header.hero::before {
   transition: all 0.3s ease;
 }
 
-/* Reveal caption on hover */
+/* Reveal caption on hover of its figure */
 .gallery figure:hover figcaption {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-/* Subtitle styling (inside caption) */
+/* Subtitle styling inside caption */
 .gallery .caption-sub {
   display: block;
   font-size: 0.8rem;
   color: #ddd;
+}
+
+/* ------------------------------------- */
+/* 7. Footer                             */
+/* ------------------------------------- */
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #aaa;
+  font-size: 0.8rem;
 }
 

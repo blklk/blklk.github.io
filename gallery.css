@@ -28,6 +28,11 @@ header.hero::before {
   margin: 0;
 }
 
+.gallery {
+  background-color: #B3A394 !important;
+}
+
+
 .gallery img {
   width: 100%;
   height: auto;

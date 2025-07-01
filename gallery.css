@@ -12,6 +12,13 @@ header.hero::before {
 /* ===== Your gallery styles ===== */
 
 .gallery {
+  background-color: #ffffff;  /* white gallery cards against page bg */
+  padding: 2rem 1rem;
+  border-radius: 8px;
+}
+
+
+.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;

@@ -6,73 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Showcasing code, CAD, research, and art.">
   
-  <!-- Google Font -->
+  <!-- Global styles & fonts -->
   <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
-
-  <!-- Lightbox2 CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-
-  <!-- Global CSS -->
   <link rel="stylesheet" href="style.css">
-  <!-- Gallery CSS -->
-  <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; background: #f4f4f4; }
-    .navbar { background: #222; padding: 1rem; display: flex; align-items: center; }
-    .logo { color: #fff; font-size: 1.5rem; font-weight: 700; }
-    .dot { color: #e94e77; }
-    .nav-links { list-style: none; margin-left: auto; display: flex; gap: 1rem; }
-    .nav-links a { color: #ddd; text-decoration: none; font-weight: 500; }
-    .nav-links a.active, .nav-links a:hover { color: #fff; }
-
-    main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
-    .gallery-header h1 { text-align: center; margin-bottom: 0.2rem; }
-    .gallery-header .intro { text-align: center; color: #555; margin-bottom: 2rem; }
-
-    /* Gallery grid */
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .gallery-item { position: relative; border-radius: 8px; background: #fff; overflow: visible; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    /* Display full images without cropping */
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      transition: transform 0.5s ease;
-      display: block;
-      margin: 0 auto;
-    }
-    /* Optional gentle zoom on hover */
-    .gallery-item:hover img { transform: scale(1.02); }
-
-    /* Caption overlay slides up */
-    .gallery-item figcaption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-    .gallery-item:hover figcaption { transform: translateY(0); }
-    .caption-sub { display: block; font-size: 0.8rem; color: #ccc; }
-
-    footer { text-align: center; padding: 1rem 0; color: #777; font-size: 0.8rem; }
-  </style>
+  
+  <!-- Gallery-only styles -->
+  <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
+
+  <!-- ————— Copy this entire block from your main page ————— -->
+
   <header>
     <nav class="navbar">
       <div class="logo">blklk<span class="dot">.</span></div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
+        <!--
+        <li><a href="code.html">Code</a></li>
+        <li><a href="cad.html">CAD</a></li>
+        <li><a href="research.html">Research</a></li>
+        -->
         <li><a href="art.html" class="active">Art</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
+  <!-- ———————————————————————————————————————————————— --
+
+    <!-- …and so on… -->
+  </section>
+
+</body>
+</html>
 
   <main>
     <section class="gallery-header">

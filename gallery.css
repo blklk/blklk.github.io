@@ -12,7 +12,7 @@ header.hero::before {
 /* ===== Your gallery styles ===== */
 
 .gallery {
-  background-color: #ffffff;  /* white gallery cards against page bg */
+  background-color: #B3A394;  /* white gallery cards against page bg */
   padding: 2rem 1rem;
   border-radius: 8px;
 }

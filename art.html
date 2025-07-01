@@ -12,6 +12,26 @@
   
   <!-- Gallery-only styles -->
   <link rel="stylesheet" href="gallery.css">
+  <!-- Inline overrides for larger gallery images -->
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      padding: 0 1rem;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .gallery-item figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -59,7 +79,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Britany Kulka (blklk). All rights reserved.</p>
+    <p>&copy; 2025 blklk. All rights reserved.</p>
   </footer>
 </body>
 </html>
